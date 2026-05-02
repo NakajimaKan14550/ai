@@ -1,243 +1,78 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FA画像処理：導入事例 - Chronix</title>
-    <style>
-        :root {
-            --primary-blue: #1a365d;
-            --secondary-blue: #f0f7ff;
-            --accent-blue: #2b6cb0;
-            --text-dark: #1a202c;
-            --bg-light: #f8fafc;
-            --border-color: #cbd5e0;
-        }
+<!-- Section 04: 次世代センサとの融合 -->
+<section style="min-height: 40vh;">
+    <div class="container" style="text-align: center;">
+        <p style="font-size: 32px; color: #1e6b6b; font-weight: bold; margin-bottom: 0;">Section 04</p>
+        <hr style="border:none; height:5px; background:var(--accent-gold); width:120px; margin:30px auto;">
+        <h2>センシング・パラダイムシフト</h2>
+    </div>
+</section>
 
-        body {
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-            line-height: 1.8;
-            color: var(--text-dark);
-            background-color: var(--bg-light);
-            margin: 0;
-            padding: 0;
-        }
-
-        /* 全体の幅を広げ、余白を大きく調整 */
-        .container {
-            max-width: 1200px;
-            margin: 60px auto;
-            padding: 0 40px;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 80px;
-            border-bottom: 5px solid var(--primary-blue);
-            padding-bottom: 30px;
-        }
-
-        h1 {
-            color: var(--primary-blue);
-            font-size: 36pt;
-            margin: 0;
-            letter-spacing: 2px;
-        }
-
-        .subtitle {
-            color: var(--accent-blue);
-            font-weight: bold;
-            font-size: 18pt;
-            margin-top: 15px;
-            text-transform: uppercase;
-        }
-
-        .section-title {
-            background-color: var(--primary-blue);
-            color: white;
-            padding: 20px 40px;
-            font-size: 24pt;
-            border-radius: 8px;
-            margin: 60px 0 40px 0;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-
-        .use-case-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-
-        .card-header {
-            background-color: var(--secondary-blue);
-            padding: 25px;
-            border-bottom: 4px solid var(--accent-blue);
-        }
-
-        .card-header h3 {
-            margin: 0;
-            color: var(--primary-blue);
-            font-size: 20pt;
-            font-weight: 800;
-        }
-
-        .card-body {
-            padding: 30px;
-            flex-grow: 1;
-        }
-
-        .image-box {
-            width: 100%;
-            height: 280px; /* 画像エリアを大きく確保 */
-            background-color: #f1f5f9;
-            margin-bottom: 30px;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid #e2e8f0;
-        }
-
-        .image-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .card:hover .image-box img {
-            transform: scale(1.05);
-        }
-
-        .item {
-            margin-bottom: 25px;
-        }
-
-        .item-title {
-            font-weight: bold;
-            color: var(--accent-blue);
-            display: block;
-            margin-bottom: 10px;
-            border-left: 6px solid var(--accent-blue);
-            padding-left: 15px;
-            font-size: 16pt;
-        }
-
-        .item-desc {
-            font-size: 14pt;
-            padding-left: 21px;
-            color: #4a5568;
-            margin: 0;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 100px;
-            padding: 40px;
-            color: #718096;
-            font-size: 12pt;
-            border-top: 2px solid var(--border-color);
-            background-color: #fff;
-        }
-
-        @media (max-width: 1024px) {
-            .container { padding: 0 20px; }
-            h1 { font-size: 28pt; }
-            .section-title { font-size: 20pt; }
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <header>
-        <h1>導入事例：産業別AI画像処理ソリューション</h1>
-        <div class="subtitle">Industrial AI Vision Implementation Case Studies</div>
-    </header>
-
-    <div class="section-title">主要分野における活用シーン</div>
-
-    <div class="use-case-grid">
-        <!-- 物流セクション -->
-        <div class="card">
-            <div class="card-header">
-                <h3>物流 (Logistics)</h3>
-            </div>
-            <div class="card-body">
-                <div class="image-box">
-                    <img src="gazo.png" alt="物体認識：部品カウント">
+<section style="background: var(--white); padding: 100px 0;">
+    <div class="container">
+        <h2 class="slide-title">SWIR & CMOS センサとの統合戦略</h2>
+        <div class="two-column">
+            <div>
+                <h3>不可視領域の可視化と高速合焦</h3>
+                <p>先端半導体パッケージやウェーハ内部の検査において、SWIR（短波長赤外）センサと液体レンズの組み合わせは、従来の光学系では不可能だった「透過検査の自動化」を実現します。</p>
+                
+                <div class="tiled-box" style="border-left: 5px solid #0d4d4d;">
+                    <h4 style="margin-bottom:10px; color:#0d4d4d;"><i class="fa-solid fa-microchip"></i> SWIRセンサへの対応</h4>
+                    <ul style="font-size: 0.95rem; padding-left: 20px; color: #475569;">
+                        <li><strong>1100nm〜1650nm透過:</strong> 近赤外域までカバーする高い光学透過特性。</li>
+                        <li><strong>シリコン透過検査:</strong> ウェーハ裏面からの欠陥検出において、ナノ秒単位の多点フォーカスを実行。</li>
+                    </ul>
                 </div>
-                <div class="item">
-                    <span class="item-title">パレット検知</span>
-                    <p class="item-desc">荷物の形状・位置をAIがリアルタイム認識。ロボットアームへ正確な座標を出力し、積み込みを自動化します[cite: 1, 2]。</p>
-                </div>
-                <div class="item">
-                    <span class="item-title">高速OCR</span>
-                    <p class="item-desc">ラベルの汚れや掠れをAIが補正。高速ラインでも止まることなく、正確な読み取りを実現します[cite: 1, 2]。</p>
+                
+                <div class="tiled-box" style="border-left: 5px solid var(--accent-gold);">
+                    <h4 style="margin-bottom:10px; color:#0d4d4d;"><i class="fa-solid fa-eye"></i> 「DX配管工」としての実装</h4>
+                    <p style="font-size: 0.95rem; color: #475569; margin: 0;">センサ、液体レンズ、AI推論をFastAPI/Pythonで密結合。人手による「顕微鏡のピント調整」を完全に排除し、データフローを直結させます。</p>
                 </div>
             </div>
-        </div>
-
-        <!-- 半導体セクション -->
-        <div class="card">
-            <div class="card-header">
-                <h3>半導体 (Semiconductor)</h3>
-            </div>
-            <div class="card-body">
-                <div class="image-box">
-                    <img src="kenpin.png" alt="欠陥検知：傷・異物">
-                </div>
-                <div class="item">
-                    <span class="item-title">微細欠陥検査</span>
-                    <p class="item-desc">ウェハ上の目に見えないレベルの傷や異物を、高解像度カメラとAIの推論で瞬時に検出します[cite: 1, 2]。</p>
-                </div>
-                <div class="item">
-                    <span class="item-title">アライメント補正</span>
-                    <p class="item-desc">チップ実装時のサブミクロン単位のズレを自動補正。歩留まりの飛躍的な向上に貢献します[cite: 1, 2]。</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 医療セクション -->
-        <div class="card">
-            <div class="card-header">
-                <h3>医療 (Medical)</h3>
-            </div>
-            <div class="card-body">
-                <div class="image-box">
-                    <img src="kenpin.png" alt="薬品外観検査">
-                </div>
-                <div class="item">
-                    <span class="item-title">薬品外観検査</span>
-                    <p class="item-desc">錠剤の欠けや異物混入、印字ミスを24時間体制で厳格に監視。高い安全性と品質を維持します[cite: 1, 2]。</p>
-                </div>
-                <div class="item">
-                    <span class="item-title">検体スクリーニング</span>
-                    <p class="item-desc">膨大な細胞画像からAIが異常箇所を一次抽出。検査技師の負担を軽減し、判定精度を高めます[cite: 1, 2]。</p>
+            <div class="image-wrapper contain" style="background: #041f1f; border-color: #0d4d4d;">
+                <!-- ここにSWIRセンサとレンズの構成図イメージ -->
+                <div style="text-align: center; color: var(--accent-gold);">
+                    <i class="fa-solid fa-wave-square" style="font-size: 100px; opacity: 0.5; margin-bottom: 20px;"></i>
+                    <p style="font-family: 'Urbanist'; font-weight: bold; letter-spacing: 2px;">SWIR INTEGRATION</p>
                 </div>
             </div>
         </div>
     </div>
+</section>
 
-    <footer>
-        &copy; 2024 Chronix Inc. | Your FA Vision Partner | Empowering Industry through AI
-    </footer>
-</div>
-
-</body>
-</html>
+<!-- Section 05: 経営インパクト -->
+<section class="sophisticated-green" style="padding: 120px 0;">
+    <div class="container">
+        <div class="ai-assistant-card" style="text-align: center; max-width: 900px; margin: 0 auto;">
+            <h2 style="color: var(--accent-gold); margin-bottom: 30px;">DX自動化による究極の人員削減</h2>
+            <p style="font-size: 20px; line-height: 2; margin-bottom: 40px; color: rgba(255,255,255,0.9);">
+                液体レンズによる「可動部ゼロ・調整ゼロ」の検査システムは、<br>
+                単なる高速化に留まりません。それは、現場から<br>
+                <strong>「目視と判断のコスト」を永久に抹消すること</strong>を意味します。
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 16px;">
+                    <i class="fa-solid fa-user-minus" style="font-size: 32px; color: var(--accent-gold); margin-bottom: 15px;"></i>
+                    <h4 style="color: #fff; margin: 0 0 10px;">技能工からの解放</h4>
+                    <p style="font-size: 14px; color: rgba(255,255,255,0.7); margin: 0;">熟練者のピント合わせ技術をアルゴリズム化し、人的リソースをクリエイティブな設計へ転換。</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 16px;">
+                    <i class="fa-solid fa-clock-rotate-left" style="font-size: 32px; color: var(--accent-gold); margin-bottom: 15px;"></i>
+                    <h4 style="color: #fff; margin: 0 0 10px;">メンテナンスフリー</h4>
+                    <p style="font-size: 14px; color: rgba(255,255,255,0.7); margin: 0;">5億回の耐久性が、定期点検やダウンタイムに伴う管理工数を極限まで削減。</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 16px;">
+                    <i class="fa-solid fa-chart-line" style="font-size: 32px; color: var(--accent-gold); margin-bottom: 15px;"></i>
+                    <h4 style="color: #fff; margin: 0 0 10px;">スループットの自動最適化</h4>
+                    <p style="font-size: 14px; color: rgba(255,255,255,0.7); margin: 0;">Focal Sweep Modeによる待機時間ゼロの撮像が、製造ラインの物理限界を押し上げます。</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 60px; border-top: 1px solid rgba(255,255,255,0.2); pt: 40px;">
+                <p style="font-family: 'Urbanist'; font-weight: 700; color: var(--accent-gold); font-size: 24px; letter-spacing: 0.1em;">
+                    THE FUTURE OF DX INSPECTION IS LIQUID.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
