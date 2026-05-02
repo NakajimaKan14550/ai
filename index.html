@@ -37,7 +37,7 @@
             padding: 0 20px;
         }
 
-        /* --- Navigation Bar --- */
+        /* --- Navigation Bar (Added) --- */
         nav {
             position: sticky;
             top: 0;
@@ -74,7 +74,7 @@
         header {
             background: linear-gradient(135deg, var(--primary-green) 0%, #041f1f 100%);
             color: var(--white);
-            padding: 80px 0 60px;
+            padding: 100px 0 60px;
             text-align: center;
         }
 
@@ -187,6 +187,10 @@
             color: var(--white);
         }
 
+        .use-case-section .section-title h2 {
+            color: var(--white);
+        }
+
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -226,6 +230,7 @@
             max-width: 90%;
             max-height: 90%;
             border-radius: 8px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
         }
 
         footer {
@@ -237,12 +242,12 @@
         }
     </style>
 </head>
-<body>
+<body id="top">
 
+<!-- Navigation with Corrected Home URL -->
 <nav>
     <div class="container nav-content">
-        <!-- ホームへのリンクを設定 -->
-        <a href="https://github.com/NakajimaKan14550/home" class="logo-link">
+        <a href="https://nakajimakan14550.github.io/home/" class="logo-link">
             <img src="logo.png" alt="CHRONIX Logo" class="header-logo">
         </a>
         <div class="urbanist" style="font-weight: 700; color: var(--primary-green); font-size: 0.8rem; letter-spacing: 1px;">
@@ -262,6 +267,7 @@
     <div class="container">
         <div class="tech-layout">
             
+            <!-- 1. Algorithm Section -->
             <div class="tech-row">
                 <div class="tech-text">
                     <div class="section-title" style="text-align: left;">
@@ -295,13 +301,14 @@
                 </div>
             </div>
 
+            <!-- 2. AI Section -->
             <div class="tech-row reverse">
                 <div class="tech-text">
                     <div class="section-title" style="text-align: left;">
                         <h2 style="font-size: 1.8rem;">2. AI：欠陥検知・物体認識</h2>
                         <hr style="margin: 0;">
                     </div>
-                    <p>アルゴリズムだけでは対応できない「個体差」や「曖昧な基準」を解決。感覚的な判断を自動化します。</p>
+                    <p>アルゴリズムだけでは対応できない「個体差」や「曖昧な基準」を解決。多くの学習データに基づき、人間のような感覚的な判断を自動化します。</p>
                     
                     <div class="algo-card" style="margin-top: 20px;">
                         <h4 style="color: var(--accent-gold);"><i class="fa-solid fa-check-double"></i> 欠陥検知 (Defect Detection)</h4>
@@ -322,10 +329,11 @@
     </div>
 </section>
 
+<!-- Section: Use Cases -->
 <section class="use-case-section">
     <div class="container">
         <div class="section-title">
-            <h2 style="color: white;">Industry Use Cases</h2>
+            <h2>Industry Use Cases</h2>
             <hr>
         </div>
         <div class="grid-3">
@@ -355,6 +363,7 @@
     </div>
 </footer>
 
+<!-- Modal Structure -->
 <div id="imageModal" class="modal" onclick="closeModal()">
     <img class="modal-content" id="imgFull">
 </div>
@@ -369,6 +378,7 @@
         document.getElementById("imageModal").style.display = "none";
     }
 
+    // Escキーで閉じる
     document.addEventListener('keydown', function(event) {
         if (event.key === "Escape") {
             closeModal();
