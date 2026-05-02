@@ -37,7 +37,7 @@
             padding: 0 20px;
         }
 
-        /* --- Navigation Bar (New) --- */
+        /* --- Navigation Bar --- */
         nav {
             position: sticky;
             top: 0;
@@ -56,15 +56,16 @@
 
         .logo-link {
             display: inline-block;
-            transition: opacity 0.3s ease;
+            transition: transform 0.2s ease, opacity 0.3s ease;
         }
 
         .logo-link:hover {
             opacity: 0.8;
+            transform: translateY(-1px);
         }
 
         .header-logo {
-            height: 45px; /* ロゴのサイズ調整 */
+            height: 45px;
             width: auto;
             display: block;
         }
@@ -205,7 +206,7 @@
             margin-bottom: 15px;
         }
 
-        /* --- Modal (Click to Enlarge) --- */
+        /* --- Modal --- */
         .modal {
             display: none;
             position: fixed;
@@ -227,7 +228,6 @@
             border-radius: 8px;
         }
 
-        /* --- Footer --- */
         footer {
             background: #041f1f;
             color: rgba(255,255,255,0.6);
@@ -239,11 +239,11 @@
 </head>
 <body>
 
-<!-- Navigation with Logo -->
-<nav id="top">
+<nav>
     <div class="container nav-content">
-        <a href="#top" class="logo-link">
-            <img src="input_file_0.png" alt="CHRONIX Logo" class="header-logo">
+        <!-- ホームへのリンクを設定 -->
+        <a href="https://nakajimakan14550.github.io/home" class="logo-link">
+            <img src="logo.png" alt="CHRONIX Logo" class="header-logo">
         </a>
         <div class="urbanist" style="font-weight: 700; color: var(--primary-green); font-size: 0.8rem; letter-spacing: 1px;">
             INSPECTION SYSTEM ARCHITECT
@@ -262,7 +262,6 @@
     <div class="container">
         <div class="tech-layout">
             
-            <!-- 1. Algorithm Section -->
             <div class="tech-row">
                 <div class="tech-text">
                     <div class="section-title" style="text-align: left;">
@@ -296,14 +295,13 @@
                 </div>
             </div>
 
-            <!-- 2. AI Section -->
             <div class="tech-row reverse">
                 <div class="tech-text">
                     <div class="section-title" style="text-align: left;">
                         <h2 style="font-size: 1.8rem;">2. AI：欠陥検知・物体認識</h2>
                         <hr style="margin: 0;">
                     </div>
-                    <p>アルゴリズムだけでは対応できない「個体差」や「曖昧な基準」を解決。多くの学習データに基づき、人間のような感覚的な判断を自動化します。</p>
+                    <p>アルゴリズムだけでは対応できない「個体差」や「曖昧な基準」を解決。感覚的な判断を自動化します。</p>
                     
                     <div class="algo-card" style="margin-top: 20px;">
                         <h4 style="color: var(--accent-gold);"><i class="fa-solid fa-check-double"></i> 欠陥検知 (Defect Detection)</h4>
@@ -324,7 +322,6 @@
     </div>
 </section>
 
-<!-- Section: Use Cases -->
 <section class="use-case-section">
     <div class="container">
         <div class="section-title">
@@ -358,7 +355,6 @@
     </div>
 </footer>
 
-<!-- Modal Structure -->
 <div id="imageModal" class="modal" onclick="closeModal()">
     <img class="modal-content" id="imgFull">
 </div>
