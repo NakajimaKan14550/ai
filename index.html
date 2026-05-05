@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Next-Gen Vision AI | Edge Computing Solution</title>
+    <title>Next Generation FA Image Processing | Edge AI Solution</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Urbanist:wght@600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -11,7 +11,6 @@
             --primary-dark: #041f1f;
             --primary-green: #0d4d4d;
             --accent-gold: #c5a059;
-            --accent-blue: #00d4ff;
             --white: #ffffff;
             --bg-gray: #f8fafc;
             --text-main: #1e293b;
@@ -19,182 +18,77 @@
         }
 
         body {
-            margin: 0;
-            padding: 0;
+            margin: 0; padding: 0;
             font-family: 'Noto Sans JP', sans-serif;
             color: var(--text-main);
             background-color: var(--bg-gray);
-            line-height: 1.6;
+            line-height: 1.8;
         }
 
-        h1, h2, h3, .urbanist {
-            font-family: 'Urbanist', sans-serif;
-            letter-spacing: 0.05em;
-        }
+        h1, h2, h3, .urbanist { font-family: 'Urbanist', sans-serif; letter-spacing: 0.05em; }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
+        /* --- Navigation --- */
         nav {
-            position: sticky;
-            top: 0;
-            width: 100%;
+            position: sticky; top: 0; width: 100%;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 100;
-            padding: 12px 0;
+            z-index: 100; padding: 12px 0;
         }
-
-        .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .header-logo {
-            height: 40px;
-            width: auto;
-        }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .header-logo { height: 40px; width: auto; }
 
         /* --- Hero Section --- */
         header {
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-green) 100%);
             color: var(--white);
-            padding: 120px 0 80px;
+            padding: 100px 0 140px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
+        }
+        .hero-tag { color: var(--accent-gold); font-weight: 800; text-transform: uppercase; margin-bottom: 15px; display: block; }
+        .intro-text-box {
+            max-width: 850px; margin: 40px auto 0; text-align: left;
+            background: rgba(255,255,255,0.05);
+            padding: 30px; border-left: 4px solid var(--accent-gold);
+            font-size: 1.05rem;
         }
 
-        .hero-tag {
-            color: var(--accent-gold);
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            display: block;
-            font-size: 1.2rem;
+        /* --- Analysis Grid --- */
+        .summary-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px; margin-top: -80px; position: relative; z-index: 10;
         }
-
-        /* --- Summary Section --- */
-        .summary-box {
-            background: var(--white);
-            border-radius: 16px;
-            padding: 40px;
-            margin-top: -60px;
+        .summary-card {
+            background: var(--white); padding: 40px; border-radius: 12px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            position: relative;
-            z-index: 10;
         }
+        .summary-card i { color: var(--accent-gold); font-size: 2rem; margin-bottom: 20px; }
+        .summary-card h3 { color: var(--primary-green); margin-bottom: 15px; }
 
-        .summary-item i {
-            color: var(--accent-gold);
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
+        /* --- Main Content Section --- */
+        section { padding: 80px 0; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 2.2rem; color: var(--primary-green); }
+        .section-title hr { width: 60px; height: 4px; background: var(--accent-gold); border: none; margin: 20px auto; }
 
-        .summary-item h3 {
-            font-size: 1.1rem;
-            margin: 10px 0;
-            color: var(--primary-green);
-        }
+        .content-body { max-width: 900px; margin: 0 auto; }
+        .article-h3 { font-size: 1.6rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-top: 50px; color: var(--primary-green); }
 
-        /* --- Core Content --- */
-        section {
-            padding: 100px 0;
-        }
+        .tech-row { display: flex; align-items: flex-start; gap: 40px; margin: 40px 0; flex-wrap: wrap; }
+        .tech-text { flex: 1.5; min-width: 300px; }
+        .tech-image { flex: 1; min-width: 300px; text-align: center; }
+        .clickable-img { width: 100%; border-radius: 8px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); cursor: zoom-in; }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
+        /* --- Feature Tags --- */
+        .tag { display: inline-block; padding: 2px 10px; background: #e2e8f0; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-right: 5px; color: var(--primary-green); }
 
-        .section-title h2 {
-            font-size: 2.2rem;
-            color: var(--primary-green);
-        }
+        footer { background: var(--primary-dark); color: rgba(255,255,255,0.6); padding: 60px 0; text-align: center; }
 
-        .section-title hr {
-            width: 60px;
-            height: 4px;
-            background: var(--accent-gold);
-            border: none;
-            margin: 20px auto;
-        }
-
-        .tech-row {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-            flex-wrap: wrap;
-            margin-bottom: 100px;
-        }
-
-        .tech-row.reverse { flex-direction: row-reverse; }
-
-        .tech-text { flex: 1.2; min-width: 350px; }
-        .tech-image { flex: 1; min-width: 350px; text-align: center; }
-
-        .feature-tag {
-            display: inline-block;
-            padding: 4px 12px;
-            background: rgba(197, 160, 89, 0.1);
-            color: var(--accent-gold);
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 0.85rem;
-            margin-bottom: 10px;
-        }
-
-        .clickable-img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            cursor: zoom-in;
-            transition: transform 0.3s ease;
-        }
-
-        .clickable-img:hover { transform: scale(1.02); }
-
-        /* --- Industry Grid --- */
-        .industry-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .industry-card {
-            background: var(--white);
-            padding: 35px;
-            border-radius: 12px;
-            transition: 0.3s;
-            border-bottom: 4px solid transparent;
-        }
-
-        .industry-card:hover {
-            transform: translateY(-5px);
-            border-bottom: 4px solid var(--accent-gold);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
-        }
-
-        .industry-card i {
-            font-size: 2.5rem;
-            color: var(--primary-green);
-            margin-bottom: 20px;
-        }
-
-        footer {
-            background: var(--primary-dark);
-            color: rgba(255,255,255,0.7);
-            padding: 60px 0;
-            text-align: center;
-        }
+        /* --- Modal --- */
+        .modal { display: none; position: fixed; z-index: 1000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
+        .modal-content { max-width: 90%; max-height: 90%; }
     </style>
 </head>
 <body>
@@ -202,89 +96,92 @@
 <nav>
     <div class="container nav-content">
         <a href="https://nakajimakan14550.github.io/home/"><img src="logo.png" alt="CHRONIX" class="header-logo"></a>
-        <div class="urbanist" style="font-weight: 700; color: var(--primary-green); font-size: 0.8rem;">EDGE-NATIVE SOLUTIONS</div>
+        <div class="urbanist" style="font-weight: 700; color: var(--primary-green); font-size: 0.8rem;">INSPECTION SYSTEM ARCHITECT</div>
     </div>
 </nav>
 
 <header>
     <div class="container">
-        <span class="hero-tag urbanist">Beyond Machine Vision</span>
-        <h1 style="font-size: 3.2rem; line-height: 1.2;">「工場の目」から「脳」へ</h1>
-        <p style="font-size: 1.2rem; opacity: 0.9; margin-top: 20px;">PC依存のボトルネックを解消する、次世代エッジAIアーキテクチャ</p>
+        <span class="hero-tag urbanist">Insight Report 202X</span>
+        <h1 style="font-size: 3rem; line-height: 1.2;">「工場の目」から「脳」へ：<br>AI画像処理の真実と次なるボトルネック</h1>
+        
+        <div class="intro-text-box">
+            従来のルールベース画像処理は、照明の変化や製品の個体差に弱く、曖昧な基準を判定するには「人の目」に頼るほかありませんでした。この限界を突破し、官能検査を自動化するためにAI（ディープラーニング）が導入されました。しかし、現在多くの現場が直面しているのは、高性能PCに依存したシステム構成による通信遅延、管理工数の増大、そして「現場環境での精度低下」という新たな壁です。「撮る」ことがコモディティ化した今、真の競争軸はAIの精度そのものではなく、いかにしてPCを介さず現場で完結させるか、というアーキテクチャの転換にあります。
+        </div>
     </div>
 </header>
 
 <div class="container">
-    <div class="summary-box">
-        <div class="summary-item">
+    <div class="summary-grid">
+        <div class="summary-card">
             <i class="fa-solid fa-microchip"></i>
-            <h3>エッジ推論の完結</h3>
-            <p style="font-size: 0.9rem; color: var(--text-light);">カメラ内部で判定を完結させ、通信遅延とPC管理の工数をゼロへ。</p>
+            <h3>エッジAIの分散処理</h3>
+            <p>カメラ内部で推論を完結。PCへの転送遅延を排除し、ネットワーク負荷をゼロにする次世代の設計思想。</p>
         </div>
-        <div class="summary-item">
-            <i class="fa-solid fa-network-wired"></i>
-            <h3>脱・PC依存</h3>
-            <p style="font-size: 0.9rem; color: var(--text-light);">OSアップデートやドライバ干渉から解放された、止まらない検査ライン。</p>
+        <div class="summary-card">
+            <i class="fa-solid fa-eye-low-vision"></i>
+            <h3>スペクトル解析の融合</h3>
+            <p>可視光を超えたSWIR（短波赤外）等を用い、AIがより判断しやすい「高品質な物理データ」を入力する。</p>
         </div>
-        <div class="summary-item">
-            <i class="fa-solid fa-eye"></i>
-            <h3>スペクトル解析</h3>
-            <p style="font-size: 0.9rem; color: var(--text-light);">可視光を超えたSWIR技術により、経験則を数値化する非破壊検査を導入。</p>
+        <div class="summary-card">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h3>現場の環境耐性</h3>
+            <p>GIGO（ゴミを入れればゴミが出る）を脱却。光学設計の最適化により、AIの再学習コストを最小化する。</p>
         </div>
     </div>
 </div>
 
 <section>
     <div class="container">
-        <div class="tech-row">
-            <div class="tech-text">
-                <span class="feature-tag">EDGE-NATIVE</span>
-                <h2 style="font-size: 2rem;">1. 自律分散型「脳内蔵カメラ」</h2>
-                <p>従来の「カメラ＋PC」構成は、通信帯域の圧迫と複雑な配線を生みます。AIプロセッサをカメラに統合することで、現場で即座に判断を下す「エッジ・ネイティブ」な環境を構築。システムの堅牢性を極限まで高めます。</p>
-            </div>
-            <div class="tech-image">
-                
-                <img src="kenpin.png" alt="AIエッジ推論" class="clickable-img" onclick="openModal(this.src)">
-            </div>
-        </div>
+        <div class="content-body">
+            
+            <h3 class="article-h3">【業界分析】AI導入を阻む「死角」とは</h3>
+            <p>物流・半導体・医療の現場において、マシンビジョンは「画像記録」から「知的な判断」へとシフトしました。高解像度CMOSセンサの普及により、鮮明な画像を撮ることは容易になりましたが、多くのプロジェクトは「実用化」の段階で足踏みをしています。その真因は、アルゴリズムの優劣ではなく、システム構成の複雑化にあります。</p>
 
-        <div class="tech-row reverse">
-            <div class="tech-text">
-                <span class="feature-tag">SWIR / SPECTRAL</span>
-                <h2 style="font-size: 2rem;">2. 非破壊・特殊波長センシング</h2>
-                <p>可視光では捉えきれない「素材の質」や「内部の空洞」。短波赤外（SWIR）やマルチスペクトル技術を活用し、AIが成分や密度の微細な差を判別。熟練者の感覚に頼っていた高度な官能検査を自動化します。</p>
+            <div class="tech-row">
+                <div class="tech-text">
+                    <h4 style="color: var(--primary-green);"><span class="tag">ISSUE 01</span> 「集中処理」がもたらす限界</h4>
+                    <p>カメラで撮影した大容量データを産業用PCへ転送し、そこでAI判定を行う従来の手法は、高速な生産ラインにおいて「通信レイテンシ」という致命的なボトルネックを生みます。判定を待つためにラインを止める、あるいはPCのスペック不足でタクトタイムが上がらないといった矛盾が発生しています。</p>
+                </div>
+                <div class="tech-image">
+                    <img src="kenpin.png" alt="AI検品イメージ" class="clickable-img" onclick="openModal(this.src)">
+                    <p style="font-size: 0.8rem; color: var(--text-light); margin-top: 5px;">図1：AIによる欠陥検知の自動化</p>
+                </div>
             </div>
-            <div class="tech-image">
-                
-                <img src="gazo.png" alt="スペクトル解析" class="clickable-img" onclick="openModal(this.src)">
-            </div>
-        </div>
-    </div>
-</section>
 
-<section style="background-color: #f1f5f9;">
-    <div class="container">
-        <div class="section-title">
-            <h2 class="urbanist">NEXT ACTION</h2>
-            <p>現場のボトルネックを特定し、最適なアーキテクチャへの転換を支援します</p>
-            <hr>
-        </div>
-        <div class="industry-grid">
-            <div class="industry-card">
-                <i class="fa-solid fa-industry"></i>
-                <h3>検査工程のモジュール化</h3>
-                <p>ラインを止めずに実行する「自律分散型」生産ラインの設計と実装。</p>
+            <h3 class="article-h3">浮かび上がる「静かなる課題」</h3>
+            <p>多くの企業が導入後に気づくのは、AIモデルの保守コストです。現場の照明が少し変わるだけで再学習が必要になる、あるいはPCのOSアップデートによってシステムが不安定になるといった「現場のエンジニアを疲弊させる付帯業務」が、AI導入による生産性向上を相殺しています。</p>
+            
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 20px; padding-left: 30px; position: relative;">
+                    <i class="fa-solid fa-triangle-exclamation" style="position: absolute; left: 0; top: 5px; color: var(--accent-gold);"></i>
+                    <strong>GIGO（Garbage In, Garbage Out）の罠：</strong> 光学的な対策を怠り、不鮮明な画像をAIに処理させようとすることで、過学習や精度の不安定を招いています。
+                </li>
+                <li style="margin-bottom: 20px; padding-left: 30px; position: relative;">
+                    <i class="fa-solid fa-triangle-exclamation" style="position: absolute; left: 0; top: 5px; color: var(--accent-gold);"></i>
+                    <strong>システムの脆弱性：</strong> 汎用PCを介在させることで、ウイルス対策やドライバ干渉といった、製造現場には本来不要な管理リスクを抱え込んでいます。
+                </li>
+            </ul>
+
+            <h3 class="article-h3">202X年の展望：エッジAIによる分散処理</h3>
+            <p>これからのマシンビジョン戦略において鍵となるのは、判定処理をカメラ内部で完結させる「脳内蔵型」カメラの採用です。カメラ自体が合格・不合格のみを上位システムへ通知することで、ネットワーク負荷を劇的に軽減し、システムの構成をシンプル化します。</p>
+
+            <div class="tech-row">
+                <div class="tech-image">
+                    <img src="gazo.png" alt="画像処理アルゴリズム" class="clickable-img" onclick="openModal(this.src)">
+                    <p style="font-size: 0.8rem; color: var(--text-light); margin-top: 5px;">図2：光学特性を活かしたデータ前処理</p>
+                </div>
+                <div class="tech-text">
+                    <h4 style="color: var(--primary-green);"><span class="tag">SOLUTION</span> 特殊波長とAIの融合</h4>
+                    <p>可視光では見えない「熱」や「素材の質」を捉える赤外線（SWIR/NIR）センシングと、AIを組み合わせることが、熟練者の「経験則」を自動化する唯一の道です。物理レイヤーでの最適化を徹底することが、結果としてAIの学習コストを下げ、システム全体を堅牢にします。</p>
+                </div>
             </div>
-            <div class="industry-card">
-                <i class="fa-solid fa-vial-circle-check"></i>
-                <h3>特殊波長PoC支援</h3>
-                <p>食品・薬品業界等、可視光では不可能だった検知項目の技術検証。</p>
+
+            <div style="background: #edf2f7; padding: 40px; border-radius: 12px; margin-top: 60px;">
+                <h4 style="margin-top: 0; color: var(--primary-green);"><i class="fa-solid fa-pen-nib"></i> 編集後記</h4>
+                <p style="margin-bottom: 0;">自動化の成否は、現場の泥臭い物理環境をどう制御するかにかかっています。もし、現在進行中のプロジェクトで「判定精度」や「システム構成の複雑化」に課題を感じている場合は、ハードウェア選定の再評価が解決の糸口になるかもしれません。弊社では、現場の環境耐性とAI処理を両立させるための技術資料を保持しています。壁打ち相手が必要であれば、いつでもお声がけください。</p>
             </div>
-            <div class="industry-card">
-                <i class="fa-solid fa-diagram-project"></i>
-                <h3>DXアーキテクチャ設計</h3>
-                <p>管理コストを最小化する、PCレスな現場画像インフラの全体最適化。</p>
-            </div>
+
         </div>
     </div>
 </section>
@@ -292,12 +189,12 @@
 <footer>
     <div class="container">
         <p class="urbanist" style="font-weight: 800; color: var(--accent-gold); letter-spacing: 2px;">DX PLUMBER / INSPECTION ARCHITECT</p>
-        <p>&copy; 2026 Advanced AI Vision Solutions</p>
+        <p>&copy; 2026 Advanced Automation Solutions. All Rights Reserved.</p>
     </div>
 </footer>
 
-<div id="imageModal" class="modal" style="display:none; position:fixed; z-index:1000; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center;" onclick="this.style.display='none'">
-    <img id="imgFull" style="max-width:90%; max-height:90%;">
+<div id="imageModal" class="modal" onclick="this.style.display='none'">
+    <img id="imgFull" class="modal-content">
 </div>
 
 <script>
@@ -305,6 +202,7 @@
         document.getElementById("imageModal").style.display = "flex";
         document.getElementById("imgFull").src = src;
     }
+    document.addEventListener('keydown', e => { if(e.key === "Escape") document.getElementById("imageModal").style.display = "none"; });
 </script>
 
 </body>
